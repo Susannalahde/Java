@@ -5,20 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.io.Console;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     WebView web;
-    Button button, showinitialize;
+    Button button, showinitialize,  refresh, forward;
     EditText url;
 
     @Override
@@ -31,14 +29,16 @@ public class MainActivity extends AppCompatActivity {
         showinitialize = findViewById(R.id.showinitialize);
         showinitialize.setOnClickListener(listener);
         button.setOnClickListener(listener);
+        refresh = findViewById(R.id.refreshbutton);
+        refresh.setOnClickListener(listener);
+        forward = findViewById(R.id.forwardbutton);
+        forward.setOnClickListener(listener);
         web.setWebViewClient(new WebViewClient());
-        web.getSettings().setJavaScriptEnabled(true);
     }
 
     public View.OnClickListener listener = new View.OnClickListener() {
         ArrayList<String> listUrl = new ArrayList<>();
         int i = 0;
-        int luku = 0;
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
@@ -46,19 +46,13 @@ public class MainActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.button:
                     if (website.matches("index.html") == true) {
+                        web.getSettings().setJavaScriptEnabled(true);
                         web.loadUrl("file:///android_asset/index.html");
                         web.evaluateJavascript("javascript:shoutOut()", null);
                     } else {
-                        if(luku >= i) {
-                            web.loadUrl("http://" + website);
-                            listUrl.add(i, website);
-                            System.out.println(listUrl.get(i) + i);
-                            i++;
-                            luku = i;
-                        } else {
-                            listUrl.removeAll(listUrl);
-                            web.loadUrl("http://" + website);
-                        }
+                        web.loadUrl("http://" + website);
+                        listUrl.add(i, website);
+                        i++;
                     }
                     break;
                 case R.id.showinitialize:
@@ -71,18 +65,27 @@ public class MainActivity extends AppCompatActivity {
                                 web.loadUrl("http://" + listUrl.get(i));
                                 System.out.println(listUrl.get(i));
                             } catch  (IndexOutOfBoundsException e) {
-                                System.out.println("DA FUQ?");
+                                e.printStackTrace();
                             }
 
-                        } else {
-                            ///TODO
                         }
-
+                    }
+                    break;
+                case R.id.refreshbutton:
+                    web.loadUrl("http://" + website);
+                    break;
+                case R.id.forwardbutton:
+                    if(i+1<=listUrl.size()){
+                        try{
+                            i++;
+                            web.loadUrl("http://" + listUrl.get(i));
+                            System.out.println(listUrl.get(i));
+                        } catch  (IndexOutOfBoundsException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
             }
-
-
         }
     };
 
