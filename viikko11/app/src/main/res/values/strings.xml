@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">viikko11</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Settings">Settings</string>
+    <string name="Username">Username</string>
+    <string name="TextCustomization">Text Customization</string>
+    <string name="Enabled">Enabled</string>
+    <string name="Disabled">Disabled</string>
+    <string name="CustomizeView">Customize View</string>
+    <string name="Fontsize">Font size</string>
+    <string name="Height">Height</string>
+    <string name="Width">Width</string>
+    <string name="Rows">Rows</string>
+    <string name="Languages">Languages</string>
+    <string name="English">English</string>
+    <string name="Finnish">Finnish</string>
+    <string name="Swedish">Swedish</string>
+    <string name="Writehere">Write here!</string>
+    <string name="DefaultUser">Default User</string>
+</resources>

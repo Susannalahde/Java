@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:id="@+id/username"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/Username"
+        app:actionLayout="@layout/insert_username"
+        app:showAsAction="always"/>
+    <item android:title="@string/TextCustomization">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/enabled"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/Enabled"/>
+                <item android:id="@+id/disabled"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/Disabled"/>
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/CustomizeView">
+        <menu>
+            <item android:id="@+id/fontSize"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/Fontsize"
+                app:actionLayout="@layout/insert_option"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/height"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/Height"
+                app:actionLayout="@layout/insert_option"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/width"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/Width"
+                app:actionLayout="@layout/insert_option"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/rows"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/Rows"
+                app:actionLayout="@layout/insert_option"
+                app:showAsAction="always"/>
+        </menu>
+    </item>
+    <item android:title="@string/Languages">
+        <menu>
+            <item android:id="@+id/English"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/English" />
+
+            <item android:id="@+id/Finnish"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/Finnish" />
+
+            <item android:id="@+id/Swedish"
+                android:icon="@drawable/ic_settings"
+                android:enabled="false"
+                android:title="@string/Swedish" />
+        </menu>
+    </item>
+</menu>

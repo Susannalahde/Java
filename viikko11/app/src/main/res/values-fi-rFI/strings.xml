@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">viikko11</string>
+    <string name="navigation_drawer_open">Avaa</string>
+    <string name="navigation_drawer_close">Sulje</string>
+    <string name="Settings">Asetukset</string>
+    <string name="Username">Käyttäjänimi</string>
+    <string name="TextCustomization">Tekstin muokkaus</string>
+    <string name="Enabled">Käytössä</string>
+    <string name="Disabled">Ei käytössä</string>
+    <string name="CustomizeView">Muokkaa näkymää</string>
+    <string name="Fontsize">Fontin koko</string>
+    <string name="Height">Korkeus</string>
+    <string name="Width">Leveys</string>
+    <string name="Rows">Rivejä</string>
+    <string name="Languages">Kielet</string>
+    <string name="English">Englanti</string>
+    <string name="Finnish">Suomi</string>
+    <string name="Swedish">Ruotsi</string>
+    <string name="Writehere">Kirjoita tähän!</string>
+    <string name="DefaultUser">Oletus käyttäjä</string>
+</resources>
